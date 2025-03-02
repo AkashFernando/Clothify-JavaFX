@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.EmployeeDashboardController">
+   <children>
+      <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="639.0" prefWidth="241.0" style="-fx-background-color: D907F7;">
+         <children>
+            <Label layoutX="40.0" layoutY="75.0" prefHeight="64.0" prefWidth="145.0" text="Clothify Store">
+               <font>
+                  <Font name="Javanese Text" size="23.0" />
+               </font>
+            </Label>
+            <JFXButton layoutX="21.0" layoutY="152.0" onAction="#btnDashboardOnAction" prefHeight="44.0" prefWidth="188.0" stylesheets="@../css/Dashboard.CSS" text="Dashboard">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="21.0" layoutY="209.0" onAction="#btnEmployeeOnAction" prefHeight="44.0" prefWidth="188.0" stylesheets="@../css/Dashboard.CSS" text="Place Order">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="19.0" layoutY="276.0" onAction="#btnCustomerOnAction" prefHeight="44.0" prefWidth="188.0" stylesheets="@../css/Dashboard.CSS" text="Customers">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="21.0" layoutY="336.0" onAction="#btnAboutOnAction" prefHeight="44.0" prefWidth="188.0" stylesheets="@../css/Dashboard.CSS" text="About">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="27.0" layoutY="553.0" prefHeight="44.0" prefWidth="188.0" style="-fx-background-color: black;" text="Logout" textFill="#efebeb">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXButton>
+            <ImageView layoutX="55.0" layoutY="-1.0">
+               <image>
+                  <Image url="@../assets/shop%20icon.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="ancpane" layoutX="252.0" layoutY="10.0" prefHeight="639.0" prefWidth="816.0" />
+   </children>
+</AnchorPane>

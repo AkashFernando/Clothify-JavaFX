@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ItemFormController">
+   <children>
+      <AnchorPane layoutY="-10.0" prefHeight="639.0" prefWidth="653.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d907f7" height="81.0" layoutX="-10.0" layoutY="-11.0" stroke="BLACK" strokeType="INSIDE" width="819.0" />
+            <Label layoutX="319.0" layoutY="21.0" text="Add Item Form">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <JFXTextField layoutX="14.0" layoutY="103.0" prefHeight="26.0" prefWidth="135.0" promptText="Customer ID" text="Item Code" />
+            <JFXTextField layoutX="264.0" layoutY="103.0" promptText="Customer Name" text="Description" />
+            <JFXTextField layoutX="507.0" layoutY="103.0" promptText="Contact Number" text="Supplier ID" />
+            <JFXTextField layoutX="14.0" layoutY="162.0" promptText="Address" text="Quantity On Hand" />
+            <JFXTextField layoutX="264.0" layoutY="162.0" promptText="Contact Number" text="Unit Price" />
+            <JFXButton layoutX="14.0" layoutY="238.0" prefHeight="38.0" prefWidth="102.0" style="-fx-background-color: green;" text="Add" textFill="#fcf5f5">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="230.0" layoutY="238.0" prefHeight="38.0" prefWidth="102.0" style="-fx-background-color: yellow;" text="Update">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="600.0" layoutY="238.0" prefHeight="38.0" prefWidth="102.0" style="-fx-background-color: red;" text="Delete" textFill="#faf5f5">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="412.0" layoutY="238.0" prefHeight="38.0" prefWidth="102.0" style="-fx-background-color: blue;" text="Search" textFill="#f2f0f0">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <TableView layoutX="16.0" layoutY="310.0" prefHeight="196.0" prefWidth="774.0">
+               <columns>
+                  <TableColumn prefWidth="74.39999198913574" text="Item Code" />
+                  <TableColumn prefWidth="171.9999771118164" text="Description" />
+                  <TableColumn minWidth="0.0" prefWidth="84.800048828125" text="Supplier ID" />
+                  <TableColumn prefWidth="181.60000610351562" text="Quantity On Hand" />
+                  <TableColumn minWidth="0.0" prefWidth="122.4000244140625" text="Unit Price" />
+                  <TableColumn minWidth="0.0" prefWidth="139.20001220703125" text="Size" />
+               </columns>
+            </TableView>
+            <JFXComboBox layoutX="507.0" layoutY="162.0" promptText="Size" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
