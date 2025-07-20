@@ -12,14 +12,24 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.stage.FileChooser;
 import service.custom.EmployeeService;
 import service.custom.impl.EmployeeServiceImpl;
 
+import java.io.File;
+import java.io.IOException;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.util.ResourceBundle;
 
 public class AddEmployeeFormController implements Initializable {
 
+    public ImageView imgEmployee;
     @FXML
     private JFXPasswordField txtPassword;
     @FXML
@@ -54,12 +64,15 @@ public class AddEmployeeFormController implements Initializable {
 
     @FXML
     private JFXTextField txtEmpName;
+    private File selectedPhotoFile;
+
 
     EmployeeService employeeService = new EmployeeServiceImpl();
     Employee employee;
 
+
     @FXML
-    void btnAddOnAction(ActionEvent event) {
+    void btnAddOnAction(ActionEvent event) throws IOException {
         saveEmployee();
         loadTable();
         clearFields();
@@ -111,15 +124,22 @@ public class AddEmployeeFormController implements Initializable {
         txtAddress.setText(newVal.getAddress());
         txtConNumber.setText(newVal.getContactNumber());
         txtEmpName.setText(newVal.getName());
+        if (newVal.getPhotoPath() != null && new File(newVal.getPhotoPath()).exists()) {
+            imgEmployee.setImage(new Image(new File(newVal.getPhotoPath()).toURI().toString()));
+        } else {
+            imgEmployee.setImage(null);
+        }
     }
 
     private void clearFields() {
-        txtEmpId.setText("");
+       txtEmpId.setText("");
         txtEmail.setText("");
         txtAddress.setText("");
         txtConNumber.setText("");
         txtEmpName.setText("");
         txtPassword.setText("");
+        selectedPhotoFile= null;
+        imgEmployee.setImage(null);
     }
 
     private void setCellValueFactory() {
@@ -138,7 +158,7 @@ public class AddEmployeeFormController implements Initializable {
 
     }
 
-    private void saveEmployee() {
+    private void saveEmployee() throws IOException {
         boolean success=false;
         if (!(txtEmpName.getText().isEmpty()
                 && txtConNumber.getText().isEmpty()
@@ -152,9 +172,19 @@ public class AddEmployeeFormController implements Initializable {
                     txtConNumber.getText(),
                     txtEmail.getText(),
                     txtAddress.getText(),
-                    txtPassword.getText(),
+                     txtPassword.getText(),
+                     selectedPhotoFile.getPath(),
                     "employee"
             ));
+        }
+        String savedPhotoPath = null;
+        if (selectedPhotoFile != null) {
+            Path destDir = Paths.get("photos/employees");
+            if (!Files.exists(destDir)) Files.createDirectories(destDir);
+
+            Path destFile = destDir.resolve(txtEmpId + ".png");
+            Files.copy(selectedPhotoFile.toPath(), destFile, StandardCopyOption.REPLACE_EXISTING);
+            savedPhotoPath = destFile.toString();
         }
         if (success){
             new Alert(Alert.AlertType.INFORMATION,"Employee Added!").show();
@@ -167,5 +197,21 @@ public class AddEmployeeFormController implements Initializable {
     public void btnRefreshOnAction(ActionEvent actionEvent) {
         loadTable();
         clearFields();
+    }
+
+    public void btnAddEmployeeImageOnAction(ActionEvent actionEvent) {
+
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Select Employee Photo");
+        fileChooser.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("Image Files", "*.jpg", "*.jpeg", "*.png")
+        );
+
+        File file = fileChooser.showOpenDialog(imgEmployee.getScene().getWindow());
+
+        if (file != null) {
+            selectedPhotoFile = file;
+            imgEmployee.setImage(new Image(file.toURI().toString()));
+        }
     }
 }

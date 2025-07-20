@@ -56,6 +56,7 @@ public class LoginFormController {
                 "Akash@gmail.com",
                 "Panadura",
                 "12345",
+                null,
                 "admin");
         if (!isDuplicate(employee)) {
             employeeService.saveEmployee(employee);

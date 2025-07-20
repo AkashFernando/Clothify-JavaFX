@@ -9,7 +9,6 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="541.0" prefWidth="810.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddSupplierFormController">
    <children>
       <AnchorPane layoutX="5.0" prefHeight="538.0" prefWidth="798.0">
@@ -20,38 +19,38 @@
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <JFXTextField layoutX="14.0" layoutY="103.0" prefHeight="26.0" prefWidth="135.0" promptText="Supplier ID" />
-            <JFXTextField layoutX="281.0" layoutY="103.0" promptText="Company Name" />
-            <JFXTextField layoutX="525.0" layoutY="103.0" promptText="Contact Number" />
-            <JFXTextField layoutX="14.0" layoutY="175.0" promptText="Address" />
-            <JFXTextField layoutX="281.0" layoutY="175.0" promptText="Contact Number" text="Email" />
-            <JFXButton layoutX="14.0" layoutY="238.0" prefHeight="38.0" prefWidth="102.0" style="-fx-background-color: green;" text="Add" textFill="#fcf5f5">
+            <JFXTextField fx:id="txtSupId" layoutX="14.0" layoutY="103.0" prefHeight="26.0" prefWidth="135.0" promptText="Supplier ID" />
+            <JFXTextField fx:id="txtComName" layoutX="281.0" layoutY="103.0" promptText="Company Name" />
+            <JFXTextField fx:id="txtConNumber" layoutX="525.0" layoutY="103.0" promptText="Contact Number" />
+            <JFXTextField fx:id="txtAddress" layoutX="14.0" layoutY="175.0" promptText="Address" />
+            <JFXTextField fx:id="txtEmail" layoutX="281.0" layoutY="175.0" promptText="Email" />
+            <JFXButton layoutX="14.0" layoutY="238.0" onAction="#btnAddOnAction" prefHeight="38.0" prefWidth="102.0" style="-fx-background-color: green;" text="Add" textFill="#fcf5f5">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </JFXButton>
-            <JFXButton layoutX="230.0" layoutY="238.0" prefHeight="38.0" prefWidth="102.0" style="-fx-background-color: yellow;" text="Update">
+            <JFXButton layoutX="230.0" layoutY="238.0" onAction="#btnUpdateOnAction" prefHeight="38.0" prefWidth="102.0" style="-fx-background-color: yellow;" text="Update">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </JFXButton>
-            <JFXButton layoutX="600.0" layoutY="238.0" prefHeight="38.0" prefWidth="102.0" style="-fx-background-color: red;" text="Delete" textFill="#faf5f5">
+            <JFXButton layoutX="600.0" layoutY="238.0" onAction="#btnDeleteOnAction" prefHeight="38.0" prefWidth="102.0" style="-fx-background-color: red;" text="Delete" textFill="#faf5f5">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </JFXButton>
-            <JFXButton layoutX="412.0" layoutY="238.0" prefHeight="38.0" prefWidth="102.0" style="-fx-background-color: blue;" text="Search" textFill="#f2f0f0">
+            <JFXButton layoutX="412.0" layoutY="238.0" onAction="#btnSearchOnAction" prefHeight="38.0" prefWidth="102.0" style="-fx-background-color: blue;" text="Search" textFill="#f2f0f0">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </JFXButton>
-            <TableView layoutX="16.0" layoutY="310.0" prefHeight="200.0" prefWidth="774.0">
+            <TableView fx:id="tblSupplier" layoutX="16.0" layoutY="310.0" prefHeight="200.0" prefWidth="774.0">
                <columns>
-                  <TableColumn prefWidth="115.20001220703125" text="Supplier ID" />
-                  <TableColumn prefWidth="148.79998779296875" text="Company Name" />
-                  <TableColumn minWidth="0.0" prefWidth="160.0" text="Address" />
-                  <TableColumn prefWidth="134.39999389648438" text="Contact Number" />
-                  <TableColumn prefWidth="217.5999755859375" text="E mail" />
+                  <TableColumn fx:id="colSupId" prefWidth="115.20001220703125" text="Supplier ID" />
+                  <TableColumn fx:id="colComName" prefWidth="148.79998779296875" text="Company Name" />
+                  <TableColumn fx:id="colAddress" minWidth="0.0" prefWidth="160.0" text="Address" />
+                  <TableColumn fx:id="colConNumber" prefWidth="134.39999389648438" text="Contact Number" />
+                  <TableColumn fx:id="colEmail" prefWidth="217.5999755859375" text="E mail" />
                </columns>
             </TableView>
          </children>

@@ -11,6 +11,7 @@ import java.util.List;
 public class EmployeeDaoImpl implements EmployeeDao {
     @Override
     public boolean save(EmployeeEntity employee){
+
         Session session = HibernateUtil.getSession();
         Transaction transaction = null;
         try {

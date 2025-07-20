@@ -1,9 +1,6 @@
 package entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,6 +11,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @ToString
 @Entity
+@Table(name = "Employee")
 public class EmployeeEntity {
     private String name;
     @Id
@@ -23,5 +21,6 @@ public class EmployeeEntity {
     private String email;
     private String address;
     private String password;
+    private String photoPath;
     private String role;
 }

@@ -9,34 +9,29 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.EmployeeDashboardController">
    <children>
-      <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="639.0" prefWidth="241.0" style="-fx-background-color: D907F7;">
+      <AnchorPane prefHeight="652.0" prefWidth="242.0" style="-fx-background-color: D907F7;">
          <children>
             <Label layoutX="40.0" layoutY="75.0" prefHeight="64.0" prefWidth="145.0" text="Clothify Store">
                <font>
                   <Font name="Javanese Text" size="23.0" />
                </font>
             </Label>
-            <JFXButton layoutX="21.0" layoutY="152.0" onAction="#btnDashboardOnAction" prefHeight="44.0" prefWidth="188.0" stylesheets="@../css/Dashboard.CSS" text="Dashboard">
+            <JFXButton layoutX="19.0" layoutY="151.0" onAction="#btnPlaceOrderOnAction" prefHeight="44.0" prefWidth="188.0" stylesheets="@../css/Dashboard.CSS" text="Place Order">
                <font>
                   <Font size="18.0" />
                </font>
             </JFXButton>
-            <JFXButton layoutX="21.0" layoutY="209.0" onAction="#btnEmployeeOnAction" prefHeight="44.0" prefWidth="188.0" stylesheets="@../css/Dashboard.CSS" text="Place Order">
+            <JFXButton layoutX="19.0" layoutY="213.0" onAction="#btnCustomerOnAction" prefHeight="44.0" prefWidth="188.0" stylesheets="@../css/Dashboard.CSS" text="Customers">
                <font>
                   <Font size="18.0" />
                </font>
             </JFXButton>
-            <JFXButton layoutX="19.0" layoutY="276.0" onAction="#btnCustomerOnAction" prefHeight="44.0" prefWidth="188.0" stylesheets="@../css/Dashboard.CSS" text="Customers">
+            <JFXButton layoutX="19.0" layoutY="272.0" onAction="#btnAboutOnAction" prefHeight="44.0" prefWidth="188.0" stylesheets="@../css/Dashboard.CSS" text="About">
                <font>
                   <Font size="18.0" />
                </font>
             </JFXButton>
-            <JFXButton layoutX="21.0" layoutY="336.0" onAction="#btnAboutOnAction" prefHeight="44.0" prefWidth="188.0" stylesheets="@../css/Dashboard.CSS" text="About">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </JFXButton>
-            <JFXButton layoutX="27.0" layoutY="553.0" prefHeight="44.0" prefWidth="188.0" style="-fx-background-color: black;" text="Logout" textFill="#efebeb">
+            <JFXButton layoutX="27.0" layoutY="553.0" onAction="#btnLogoutOnAction" prefHeight="44.0" prefWidth="188.0" style="-fx-background-color: black;" text="Logout" textFill="#efebeb">
                <font>
                   <Font size="14.0" />
                </font>
@@ -48,6 +43,6 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="ancpane" layoutX="252.0" layoutY="10.0" prefHeight="639.0" prefWidth="816.0" />
+      <AnchorPane fx:id="ancpane" layoutX="244.0" layoutY="4.0" prefHeight="645.0" prefWidth="824.0" />
    </children>
 </AnchorPane>

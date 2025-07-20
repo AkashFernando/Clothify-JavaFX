@@ -1,6 +1,7 @@
 package util;
 import entity.*;
 import org.hibernate.Session;
+import org.hibernate.SessionBuilder;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;
 import org.hibernate.boot.MetadataSources;
@@ -19,14 +20,21 @@ public class HibernateUtil {
         Metadata metadata = new MetadataSources(build)
                 .addAnnotatedClass(EmployeeEntity.class)
                 .addAnnotatedClass(CustomerEntity.class)
+                .addAnnotatedClass(SupplierEntity.class)
+                .addAnnotatedClass(ItemEntity.class)
                 .getMetadataBuilder()
                 .applyImplicitNamingStrategy(ImplicitNamingStrategyJpaCompliantImpl.INSTANCE)
                 .build();
         return metadata.getSessionFactoryBuilder().build();
+
     }
 
     public static Session getSession() {
         return session.openSession();
     }
 
+    public static SessionFactory getSessionFactory() {
+
+        return session;
+    }
 }

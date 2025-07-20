@@ -13,5 +13,6 @@ public class Employee {
     private String email;
     private String address;
     private String password;
+    private String photoPath;
     private String role;
 }

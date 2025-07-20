@@ -46,7 +46,7 @@
                   <Font size="18.0" />
                </font>
             </JFXButton>
-            <JFXButton layoutX="27.0" layoutY="553.0" prefHeight="44.0" prefWidth="188.0" style="-fx-background-color: black;" text="Logout" textFill="#efebeb">
+            <JFXButton layoutX="27.0" layoutY="553.0" onAction="#btnLogoutOnAction" prefHeight="44.0" prefWidth="188.0" style="-fx-background-color: black;" text="Logout" textFill="#efebeb">
                <font>
                   <Font size="14.0" />
                </font>

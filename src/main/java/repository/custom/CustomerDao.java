@@ -1,10 +1,14 @@
 package repository.custom;
 
 import entity.CustomerEntity;
-import repository.CrudRepository;
+
 
 import java.util.List;
 
-public interface CustomerDao extends CrudRepository<CustomerEntity,String> {
-    List<String> getIDs();
+public interface CustomerDao {
+    boolean save(CustomerEntity customerEntity);
+    boolean update(CustomerEntity customerEntity);
+    boolean delete(Integer id);
+    CustomerEntity search(Integer id);
+    List<CustomerEntity>getAll();
 }
