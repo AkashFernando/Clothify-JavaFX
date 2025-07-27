@@ -11,8 +11,8 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="488.0" prefWidth="817.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PlaceOrderController">
-    <Pane layoutX="14.0" layoutY="13.0" prefHeight="64.0" prefWidth="369.0" style="-fx-background-color: linear-gradient(to right top, #6c5ce7, #8554ed, #9f48f1, #b935f2, #d300f0); -fx-background-radius: 30;">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="645.0" prefWidth="824.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PlaceOrderController">
+    <Pane layoutY="14.0" prefHeight="64.0" prefWidth="423.0" style="-fx-background-color: D907F7; -fx-background-radius: 30;">
         <effect>
             <DropShadow />
         </effect>
@@ -26,7 +26,7 @@
                 <Font name="System Bold" size="18.0" />
             </font>
         </Label>
-        <Label fx:id="txtOrderId" layoutX="43.0" layoutY="42.0" prefHeight="31.0" prefWidth="70.0" text="0" textFill="#fbff00">
+        <Label fx:id="lblOrderId" layoutX="48.0" layoutY="35.0" prefHeight="31.0" prefWidth="70.0" text="0" textFill="#fbff00">
             <font>
                 <Font name="System Bold" size="18.0" />
             </font>
@@ -36,25 +36,56 @@
                 <Font name="System Bold" size="18.0" />
             </font>
         </Label>
-        <Label fx:id="txtDate" layoutX="158.0" layoutY="42.0" prefHeight="31.0" prefWidth="103.0" textFill="#fbff00">
+        <Label fx:id="lblDate" layoutX="158.0" layoutY="42.0" prefHeight="31.0" prefWidth="103.0" textFill="#fbff00">
             <font>
                 <Font name="System Bold" size="18.0" />
             </font>
         </Label>
-      <AnchorPane layoutX="283.0" layoutY="42.0">
-         <children>
-              <Label fx:id="txtTime" prefHeight="31.0" prefWidth="103.0" textFill="#fbff00">
-                  <font>
-                      <Font name="System Bold" size="18.0" />
-                  </font>
-              </Label>
-         </children>
-      </AnchorPane>
+      <AnchorPane layoutX="283.0" layoutY="42.0" />
+        <Label fx:id="lblTime" layoutX="295.0" layoutY="35.0" prefHeight="31.0" prefWidth="103.0" textFill="#fbff00">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
     </Pane>
-   <AnchorPane layoutX="427.0" layoutY="172.0" prefHeight="92.0" prefWidth="316.0" />
+    <Pane layoutX="423.0" layoutY="94.0" prefHeight="182.0" prefWidth="386.0" style="-fx-background-color: D907F7; -fx-background-radius: 30;">
+        <effect>
+            <DropShadow />
+        </effect>
+        <JFXTextField fx:id="txtItemCode" focusColor="WHITE" labelFloat="true" layoutX="14.0" layoutY="10.0" promptText="ITEM CODE" unFocusColor="WHITE">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </JFXTextField>
+        <JFXTextField fx:id="txtItemName" focusColor="WHITE" labelFloat="true" layoutX="7.0" layoutY="65.0" promptText="ITEM NAME" unFocusColor="WHITE">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </JFXTextField>
+        <JFXTextField fx:id="txtPrice" focusColor="WHITE" labelFloat="true" layoutX="193.0" layoutY="65.0" promptText="PRICE" unFocusColor="WHITE">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </JFXTextField>
+        <JFXButton fx:id="btnSearchItem" buttonType="RAISED" layoutX="204.0" layoutY="5.0" onAction="#searchItemOnAction" prefHeight="39.0" prefWidth="111.0" style="-fx-background-color: white; -fx-background-radius: 30;" text="SEARCH">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </JFXButton>
+        <JFXButton fx:id="btnAddCart" buttonType="RAISED" layoutX="193.0" layoutY="115.0" onAction="#btnAddCartOnAction" prefHeight="31.0" prefWidth="111.0" style="-fx-background-color: white; -fx-background-radius: 30;" text="ADD CART">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </JFXButton>
+        <JFXTextField fx:id="txtQTY" focusColor="WHITE" labelFloat="true" layoutX="7.0" layoutY="115.0" promptText="QTY" unFocusColor="WHITE">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </JFXTextField>
+    </Pane>
    <AnchorPane layoutX="26.0" layoutY="132.0">
       <children>
-          <Pane layoutX="-22.0" layoutY="-37.0" prefHeight="181.0" prefWidth="398.0" style="-fx-background-color: linear-gradient(to right top, #6c5ce7, #8554ed, #9f48f1, #b935f2, #d300f0); -fx-background-radius: 30;">
+          <Pane layoutX="-22.0" layoutY="-37.0" prefHeight="181.0" prefWidth="398.0" style="-fx-background-color: D907F7; -fx-background-radius: 30;">
               <children>
                   <JFXTextField fx:id="txtCustName" focusColor="WHITE" labelFloat="true" layoutX="8.0" layoutY="67.0" promptText="CUSTOMER NAME" unFocusColor="WHITE">
                       <font>
@@ -77,7 +108,7 @@
                       </font>
                   </JFXTextField>
                   <JFXComboBox fx:id="CustomerComboTxt" editable="true" focusColor="#dddddd" labelFloat="true" layoutX="17.0" layoutY="13.0" onAction="#CustomerCombo" prefHeight="31.0" prefWidth="181.0" promptText="SELECT CUSTOMER" unFocusColor="#d0d0d0" />
-               <JFXButton buttonType="RAISED" layoutX="249.0" layoutY="9.0" onAction="#searchItemOnAction" prefHeight="39.0" prefWidth="111.0" style="-fx-background-color: white; -fx-background-radius: 30;" text="SEARCH">
+               <JFXButton buttonType="RAISED" layoutX="249.0" layoutY="9.0" onAction="#searchCustOnAction" prefHeight="39.0" prefWidth="111.0" style="-fx-background-color: white; -fx-background-radius: 30;" text="SEARCH">
                   <font>
                      <Font name="System Bold" size="15.0" />
                   </font>
@@ -89,30 +120,30 @@
           </Pane>
       </children>
    </AnchorPane>
-    <Pane fx:id="discount" layoutX="605.0" layoutY="214.0" prefHeight="173.0" prefWidth="193.0" style="-fx-background-color: linear-gradient(to right top, #6c5ce7, #8554ed, #9f48f1, #b935f2, #d300f0); -fx-background-radius: 30;">
+    <Pane fx:id="discount" layoutX="616.0" layoutY="485.0" prefHeight="145.0" prefWidth="199.0" style="-fx-background-color: D907F7; -fx-background-radius: 30;">
         <children>
-            <Label layoutX="19.0" layoutY="23.0" prefHeight="43.0" prefWidth="169.0" text="T O T A L" textFill="#ffc312">
+            <Label alignment="CENTER" layoutX="15.0" layoutY="14.0" prefHeight="23.0" prefWidth="169.0" text="T O T A L" textFill="#ffc312">
                 <font>
-                    <Font name="Arial" size="37.0" />
+                    <Font name="Arial" size="30.0" />
                 </font>
             </Label>
-            <Label layoutX="6.0" layoutY="81.0" prefHeight="43.0" prefWidth="140.0" text="ITEM COUNT-" textFill="WHITE">
+            <Label layoutX="18.0" layoutY="62.0" prefHeight="3.0" prefWidth="111.0" text="ITEM COUNT-" textFill="WHITE">
                 <font>
-                    <Font name="Arial" size="21.0" />
+                    <Font name="Arial" size="15.0" />
                 </font>
             </Label>
-            <Label fx:id="txtQtyCount" layoutX="152.0" layoutY="87.0" prefHeight="31.0" prefWidth="70.0" text="0" textFill="WHITE">
+            <Label fx:id="lblQtyCount" layoutX="129.0" layoutY="55.0" prefHeight="31.0" prefWidth="70.0" text="0" textFill="WHITE">
                 <font>
                     <Font size="21.0" />
                 </font>
             </Label>
-            <Label layoutX="34.0" layoutY="137.0" prefHeight="31.0" prefWidth="42.0" text="RS." textFill="#fff9f9">
+            <Label layoutX="45.0" layoutY="86.0" prefHeight="31.0" prefWidth="42.0" text="RS." textFill="#fff9f9">
                 <font>
                     <Font size="26.0" />
                 </font>
             </Label>
          <AnchorPane layoutX="87.0" layoutY="307.0" />
-            <Label fx:id="finalTotal" layoutX="73.0" layoutY="137.0" prefHeight="39.0" prefWidth="82.0" text="0" textFill="#fff9f9">
+            <Label fx:id="finalTotal" layoutX="103.0" layoutY="86.0" prefHeight="39.0" prefWidth="82.0" text="0" textFill="#fff9f9">
                 <font>
                     <Font size="27.0" />
                 </font>
@@ -128,72 +159,37 @@
    <AnchorPane layoutX="37.0" layoutY="804.0" />
    <AnchorPane layoutX="152.0" layoutY="804.0" />
    <AnchorPane layoutX="555.0" layoutY="783.0" />
-    <JFXButton buttonType="RAISED" layoutX="179.0" layoutY="436.0" prefHeight="38.0" prefWidth="140.0" style="-fx-background-color: #6c5ce7; -fx-background-radius: 30;" text="PLACE ORDER" textFill="WHITE">
+    <JFXButton buttonType="RAISED" layoutX="37.0" layoutY="545.0" onAction="#btnPlaceOrderOnAction" prefHeight="38.0" prefWidth="140.0" style="-fx-background-color: D907F7; -fx-background-radius: 30;" text="PLACE ORDER" textFill="WHITE">
         <font>
             <Font name="System Bold" size="16.0" />
         </font>
     </JFXButton>
-    <JFXButton buttonType="RAISED" layoutX="341.0" layoutY="435.0" onAction="#printBillOnAction" prefHeight="32.0" prefWidth="124.0" style="-fx-background-color: #6c5ce7; -fx-background-radius: 30;" text="PRINT BILL" textFill="WHITE">
+    <JFXButton buttonType="RAISED" layoutX="271.0" layoutY="545.0" onAction="#btnPrintBillOnAction" prefHeight="32.0" prefWidth="124.0" style="-fx-background-color: D907F7; -fx-background-radius: 30;" text="PRINT BILL" textFill="WHITE">
         <font>
             <Font name="System Bold" size="18.0" />
         </font>
     </JFXButton>
-    <JFXButton fx:id="btnRemove" buttonType="RAISED" disable="true" layoutX="481.0" layoutY="436.0" onAction="#RemoveOnAction" prefHeight="38.0" prefWidth="124.0" style="-fx-background-color: #6c5ce7; -fx-background-radius: 30;" text="REMOVE" textFill="WHITE">
+    <JFXButton fx:id="btnRemove" buttonType="RAISED" disable="true" layoutX="455.0" layoutY="544.0" onAction="#btnRemoveOnAction" prefHeight="38.0" prefWidth="124.0" style="-fx-background-color: D907F7; -fx-background-radius: 30;" text="REMOVE" textFill="WHITE">
         <font>
             <Font name="System Bold" size="18.0" />
         </font>
     </JFXButton>
-    <Label fx:id="txtCashierID" layoutX="117.0" layoutY="440.0" prefHeight="31.0" prefWidth="103.0" text="QQ001">
+    <Label fx:id="lblCashierID" layoutX="644.0" layoutY="14.0" prefHeight="31.0" prefWidth="103.0" text="QQ001">
         <font>
             <Font name="System Bold" size="18.0" />
         </font>
     </Label>
-    <Label layoutX="14.0" layoutY="440.0" prefHeight="31.0" prefWidth="103.0" text="Cashier ID - ">
+    <Label layoutX="533.0" layoutY="14.0" prefHeight="31.0" prefWidth="103.0" text="Cashier ID - ">
         <font>
             <Font name="System Bold" size="18.0" />
         </font>
     </Label>
-    <Pane layoutX="403.0" layoutY="13.0" prefHeight="182.0" prefWidth="386.0" style="-fx-background-color: linear-gradient(to right top, #6c5ce7, #8554ed, #9f48f1, #b935f2, #d300f0); -fx-background-radius: 30;">
-        <effect>
-            <DropShadow />
-        </effect>
-        <JFXTextField fx:id="txtItemCode" focusColor="WHITE" labelFloat="true" layoutX="14.0" layoutY="10.0" promptText="ITEM CODE" unFocusColor="WHITE">
-            <font>
-                <Font name="System Bold" size="14.0" />
-            </font>
-        </JFXTextField>
-        <JFXTextField fx:id="txtItemName" focusColor="WHITE" labelFloat="true" layoutX="7.0" layoutY="65.0" promptText="ITEM NAME" unFocusColor="WHITE">
-            <font>
-                <Font name="System Bold" size="14.0" />
-            </font>
-        </JFXTextField>
-        <JFXTextField fx:id="txtPrice" focusColor="WHITE" labelFloat="true" layoutX="193.0" layoutY="65.0" promptText="PRICE" unFocusColor="WHITE">
-            <font>
-                <Font name="System Bold" size="14.0" />
-            </font>
-        </JFXTextField>
-        <JFXButton buttonType="RAISED" layoutX="204.0" layoutY="5.0" onAction="#searchItemOnAction" prefHeight="39.0" prefWidth="111.0" style="-fx-background-color: white; -fx-background-radius: 30;" text="SEARCH">
-            <font>
-                <Font name="System Bold" size="15.0" />
-            </font>
-        </JFXButton>
-        <JFXButton buttonType="RAISED" layoutX="193.0" layoutY="115.0" prefHeight="31.0" prefWidth="111.0" style="-fx-background-color: white; -fx-background-radius: 30;" text="ADD CART">
-            <font>
-                <Font name="System Bold" size="15.0" />
-            </font>
-        </JFXButton>
-        <JFXTextField fx:id="txtQTY" focusColor="WHITE" labelFloat="true" layoutX="7.0" layoutY="115.0" promptText="QTY" unFocusColor="WHITE">
-            <font>
-                <Font name="System Bold" size="14.0" />
-            </font>
-        </JFXTextField>
-    </Pane>
-    <TableView fx:id="dtm" layoutX="14.0" layoutY="289.0" onMousePressed="#tblMouseClick" onMouseReleased="#tbltemsOnMouoseReleased" prefHeight="138.0" prefWidth="584.0">
-        <columns>
-            <TableColumn fx:id="colitemcode" prefWidth="206.0" text="Item Code" />
-            <TableColumn fx:id="colitemname" prefWidth="106.39997863769531" text="Item Name" />
-            <TableColumn fx:id="colprice" prefWidth="593.6000366210938" text="Price" />
-            <TableColumn fx:id="colqty" prefWidth="263.0" text="QTY" />
-        </columns>
-    </TableView>
+   <TableView fx:id="tblPlaceOrder" layoutX="53.0" layoutY="290.0" prefHeight="182.0" prefWidth="718.0">
+     <columns>
+       <TableColumn fx:id="colItemCode" prefWidth="175.19997787475586" text="Item Code" />
+       <TableColumn fx:id="colItemName" prefWidth="224.8000030517578" text="Item Name" />
+         <TableColumn fx:id="colPrice" prefWidth="177.60003662109375" text="Price" />
+         <TableColumn fx:id="colQty" prefWidth="141.59991455078125" text="Quantity" />
+     </columns>
+   </TableView>
 </AnchorPane>

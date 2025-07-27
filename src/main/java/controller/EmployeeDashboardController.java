@@ -1,13 +1,16 @@
 package controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class EmployeeDashboardController {
+public class EmployeeDashboardController implements Initializable {
 
 
     public AnchorPane ancpane;
@@ -54,6 +57,18 @@ public class EmployeeDashboardController {
     }
 
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        try {
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("/view/placeOrder.fxml"));
+            ancpane.getChildren().clear();
+            ancpane.getChildren().add(pane);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
 }
 
 
